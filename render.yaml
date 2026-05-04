@@ -8,10 +8,28 @@ services:
     envVars:
       - key: SPRING_PROFILES_ACTIVE
         value: prod
-      - key: DATABASE_URL
+      - key: DB_HOST
         fromDatabase:
           name: petstore-db
-          property: connectionString
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: petstore-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: petstore-db
+          property: database
+      - key: SPRING_DATASOURCE_USERNAME
+        fromDatabase:
+          name: petstore-db
+          property: user
+      - key: SPRING_DATASOURCE_PASSWORD
+        fromDatabase:
+          name: petstore-db
+          property: password
+      - key: DB_SSL_MODE
+        value: require
       - key: CORS_ALLOWED_ORIGINS
         value: https://petstore-web.onrender.com
 
