@@ -5,9 +5,9 @@ spring:
   application:
     name: petstore-api
   datasource:
-    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/petstore}
-    username: ${SPRING_DATASOURCE_USERNAME:petstore}
-    password: ${SPRING_DATASOURCE_PASSWORD:petstore}
+    url: ${SPRING_DATASOURCE_URL:jdbc:${DATABASE_URL:postgresql://localhost:5432/petstore}}
+    username: ${SPRING_DATASOURCE_USERNAME:${DATABASE_USERNAME:petstore}}
+    password: ${SPRING_DATASOURCE_PASSWORD:${DATABASE_PASSWORD:petstore}}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
