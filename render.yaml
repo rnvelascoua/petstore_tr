@@ -2,7 +2,7 @@ services:
   - type: web
     name: petstore-api
     plan: free
-    env: java
+    runtime: java
     rootDir: backend
     buildCommand: mvn clean package -DskipTests
     startCommand: java -jar target/*SNAPSHOT.jar
@@ -16,8 +16,9 @@ services:
       - key: CORS_ALLOWED_ORIGINS
         value: https://petstore-web.onrender.com
 
-  - type: static
+  - type: web
     name: petstore-web
+    runtime: static
     rootDir: frontend
     buildCommand: npm ci && npm run build
     staticPublishPath: dist
