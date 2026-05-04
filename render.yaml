@@ -2,7 +2,7 @@ services:
   - type: web
     name: petstore-api
     plan: free
-    runtime: docker
+    env: docker
     dockerContext: ./backend
     dockerfilePath: ./backend/Dockerfile
     envVars:
@@ -17,10 +17,14 @@ services:
 
   - type: web
     name: petstore-web
-    runtime: static
+    env: static
     rootDir: frontend
     buildCommand: npm ci && npm run build
     staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
     envVars:
       - key: VITE_API_BASE_URL
         value: https://petstore-api.onrender.com
