@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/petstore
+    username: petstore
+    password: petstore
+
+cors:
+  allowed-origins: http://localhost:5173

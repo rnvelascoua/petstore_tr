@@ -1,0 +1,23 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+  application:
+    name: petstore-api
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/petstore}
+    username: ${SPRING_DATASOURCE_USERNAME:petstore}
+    password: ${SPRING_DATASOURCE_PASSWORD:petstore}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+
+cors:
+  allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173}

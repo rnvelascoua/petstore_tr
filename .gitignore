@@ -1,0 +1,23 @@
+# Node / frontend
+node_modules/
+dist/
+build/
+*.log
+.env*
+
+# Java / backend
+target/
+*.class
+*.jar
+.gradle/
+
+# Test and coverage
+coverage/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/
