@@ -1,4 +1,4 @@
-package com.petstore.pet;
+package com.velasco.petstore.pet;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
@@ -7,9 +7,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.petstore.config.GlobalExceptionHandler;
-import com.petstore.pet.dto.PetDetailDto;
-import com.petstore.pet.dto.PetSummaryDto;
+import com.velasco.petstore.config.GlobalExceptionHandler;
+import com.velasco.petstore.pet.dto.PetDetailDto;
+import com.velasco.petstore.pet.dto.PetSummaryDto;
 import jakarta.persistence.EntityNotFoundException;
 import java.math.BigDecimal;
 import java.util.List;
@@ -43,7 +43,7 @@ class PetControllerTest {
         Page<PetSummaryDto> page = new PageImpl<>(List.of(dto), PageRequest.of(0, 20), 1);
         when(petService.findPets(eq(null), eq(null), any())).thenReturn(page);
 
-        mockMvc.perform(get("/api/v1/pets").accept(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/velaco/pets").accept(MediaType.APPLICATION_JSON))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.content[0].name").value("Buddy"))
             .andExpect(jsonPath("$.totalElements").value(1));
@@ -51,7 +51,7 @@ class PetControllerTest {
 
     @Test
     void listPets_invalidCategory_returns400() throws Exception {
-        mockMvc.perform(get("/api/v1/pets").param("category", "INVALID"))
+        mockMvc.perform(get("/velaco/pets").param("category", "INVALID"))
             .andExpect(status().isBadRequest())
             .andExpect(jsonPath("$.error").exists());
     }
@@ -60,7 +60,7 @@ class PetControllerTest {
     void getPetById_notFound_returns404() throws Exception {
         when(petService.findById(9999L)).thenThrow(new EntityNotFoundException("Pet not found"));
 
-        mockMvc.perform(get("/api/v1/pets/9999"))
+        mockMvc.perform(get("/velaco/pets/9999"))
             .andExpect(status().isNotFound())
             .andExpect(jsonPath("$.error").value("Pet not found"));
     }
@@ -70,7 +70,7 @@ class PetControllerTest {
         PetDetailDto dto = new PetDetailDto(1L, "Buddy", "Golden Retriever", 18, BigDecimal.valueOf(850), "Friendly", "https://example.com/buddy.jpg", true, PetCategory.DOGS);
         when(petService.findById(1L)).thenReturn(dto);
 
-        mockMvc.perform(get("/api/v1/pets/1"))
+        mockMvc.perform(get("/velaco/pets/1"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.name").value("Buddy"));
     }

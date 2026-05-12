@@ -1,4 +1,4 @@
-package com.petstore.config;
+package com.velasco.petstore.config;
 
 import jakarta.persistence.EntityNotFoundException;
 import java.util.Map;

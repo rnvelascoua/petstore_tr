@@ -1,8 +1,8 @@
-package com.petstore.pet;
+package com.velasco.petstore.pet;
 
-import com.petstore.pet.dto.PagedResponse;
-import com.petstore.pet.dto.PetDetailDto;
-import com.petstore.pet.dto.PetSummaryDto;
+import com.velasco.petstore.pet.dto.PagedResponse;
+import com.velasco.petstore.pet.dto.PetDetailDto;
+import com.velasco.petstore.pet.dto.PetSummaryDto;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Size;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/pets")
+@RequestMapping("/velaco/pets")
 @Validated
 public class PetController {
 

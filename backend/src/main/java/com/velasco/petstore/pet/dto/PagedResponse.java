@@ -1,4 +1,4 @@
-package com.petstore.pet.dto;
+package com.velasco.petstore.pet.dto;
 
 import java.util.List;
 

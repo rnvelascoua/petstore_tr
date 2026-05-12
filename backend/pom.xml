@@ -10,7 +10,7 @@
     <relativePath/>
   </parent>
 
-  <groupId>com.petstore</groupId>
+  <groupId>com.velasco.petstore</groupId>
   <artifactId>petstore-api</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>petstore-api</name>

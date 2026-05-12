@@ -1,4 +1,4 @@
-package com.petstore.config;
+package com.velasco.petstore.config;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
@@ -19,8 +19,8 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers(HttpMethod.GET, "/api/v1/pets/**").permitAll()
-                .requestMatchers(HttpMethod.OPTIONS, "/api/**").permitAll()
+                .requestMatchers(HttpMethod.GET, "/velaco/pets/**").permitAll()
+                .requestMatchers(HttpMethod.OPTIONS, "/velaco/**").permitAll()
                 .anyRequest().denyAll()
             )
             .headers(headers -> headers

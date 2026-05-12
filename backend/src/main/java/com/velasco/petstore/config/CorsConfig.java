@@ -1,4 +1,4 @@
-package com.petstore.config;
+package com.velasco.petstore.config;
 
 import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,7 +20,7 @@ public class CorsConfig implements WebMvcConfigurer {
             .map(String::trim)
             .filter(origin -> !origin.isEmpty())
             .toArray(String[]::new);
-        registry.addMapping("/api/**")
+        registry.addMapping("/velaco/**")
             .allowedOrigins(origins)
             .allowedMethods("GET", "OPTIONS")
             .allowedHeaders("*");

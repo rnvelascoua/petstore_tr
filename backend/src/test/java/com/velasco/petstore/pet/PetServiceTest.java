@@ -1,4 +1,4 @@
-package com.petstore.pet;
+package com.velasco.petstore.pet;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -6,8 +6,8 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.petstore.pet.dto.PetDetailDto;
-import com.petstore.pet.dto.PetSummaryDto;
+import com.velasco.petstore.pet.dto.PetDetailDto;
+import com.velasco.petstore.pet.dto.PetSummaryDto;
 import jakarta.persistence.EntityNotFoundException;
 import java.math.BigDecimal;
 import java.util.Collections;

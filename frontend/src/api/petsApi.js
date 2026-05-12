@@ -13,11 +13,11 @@ export async function getPets({ search, category, page = 0, size = 20, signal } 
     params.category = category;
   }
 
-  const { data } = await api.get('/api/v1/pets', { params, signal });
+  const { data } = await api.get('/velaco/pets', { params, signal });
   return data;
 }
 
 export async function getPetById(id, signal) {
-  const { data } = await api.get(`/api/v1/pets/${id}`, { signal });
+  const { data } = await api.get(`/velaco/pets/${id}`, { signal });
   return data;
 }

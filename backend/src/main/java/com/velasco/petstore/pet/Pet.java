@@ -1,4 +1,4 @@
-package com.petstore.pet;
+package com.velasco.petstore.pet;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

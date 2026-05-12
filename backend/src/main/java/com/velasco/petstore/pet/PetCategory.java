@@ -1,4 +1,4 @@
-package com.petstore.pet;
+package com.velasco.petstore.pet;
 
 public enum PetCategory {
     CATS,

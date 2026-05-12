@@ -49,7 +49,7 @@ SQL queries are human-readable.
 | `FISH` | Fish |
 | `BIRDS` | Birds |
 
-**Java enum**: `com.petstore.pet.PetCategory`  
+**Java enum**: `com.velasco.petstore.pet.PetCategory`  
 **JPA mapping**: `@Enumerated(EnumType.STRING)` on `Pet.category`
 
 ---

@@ -1,12 +1,12 @@
-package com.petstore.config;
+package com.velasco.petstore.config;
 
 import static org.mockito.Mockito.verifyNoInteractions;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.options;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.petstore.pet.PetController;
-import com.petstore.pet.PetService;
+import com.velasco.petstore.pet.PetController;
+import com.velasco.petstore.pet.PetService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -30,7 +30,7 @@ class CorsConfigTest {
 
     @Test
     void preflightRequest_allowsConfiguredRenderFrontendOrigin() throws Exception {
-        mockMvc.perform(options("/api/v1/pets")
+        mockMvc.perform(options("/velaco/pets")
                 .header("Origin", "https://petstore-web-wy4i.onrender.com")
                 .header("Access-Control-Request-Method", "GET"))
             .andExpect(status().isOk())

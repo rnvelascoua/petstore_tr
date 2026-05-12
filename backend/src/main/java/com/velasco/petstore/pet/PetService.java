@@ -1,7 +1,7 @@
-package com.petstore.pet;
+package com.velasco.petstore.pet;
 
-import com.petstore.pet.dto.PetDetailDto;
-import com.petstore.pet.dto.PetSummaryDto;
+import com.velasco.petstore.pet.dto.PetDetailDto;
+import com.velasco.petstore.pet.dto.PetSummaryDto;
 import jakarta.persistence.EntityNotFoundException;
 import java.util.Objects;
 import org.springframework.data.domain.Page;
