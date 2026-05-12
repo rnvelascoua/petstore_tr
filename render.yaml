@@ -31,7 +31,7 @@ services:
       - key: DB_SSL_MODE
         value: require
       - key: CORS_ALLOWED_ORIGINS
-        value: https://petstore-web-06re.onrender.com
+        value: https://petstore-web-wy4i.onrender.com
 
   - type: web
     name: petstore-web

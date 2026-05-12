@@ -1,5 +1,6 @@
 package com.petstore.config;
 
+import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.lang.NonNull;
@@ -15,7 +16,10 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     @SuppressWarnings("null")
     public void addCorsMappings(@NonNull CorsRegistry registry) {
-        String[] origins = allowedOrigins.split(",");
+        String[] origins = Arrays.stream(allowedOrigins.split(","))
+            .map(String::trim)
+            .filter(origin -> !origin.isEmpty())
+            .toArray(String[]::new);
         registry.addMapping("/api/**")
             .allowedOrigins(origins)
             .allowedMethods("GET", "OPTIONS")
